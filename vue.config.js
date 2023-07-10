@@ -27,16 +27,6 @@ module.exports = defineConfig({
         "@/": `${pathSrc}/`,
       },
     },
-    css: {
-      loaderOptions: {
-        sass: {
-          additionalData: `@use "@/styles/element/index.scss" as *;`,
-        },
-        scss: {
-          additionalData: `@use "@/styles/element/index.scss" as *;`,
-        },
-      },
-    },
     plugins: [
       // https://github.com/posva/unplugin-vue-router
       VueRouter({
@@ -82,4 +72,14 @@ module.exports = defineConfig({
     },
   },
 
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `@use "@/styles/element/index.scss" as *;`,
+      },
+      scss: {
+        additionalData: `@use "@/styles/element/index.scss" as *;`,
+      },
+    },
+  },
 });

@@ -2,7 +2,7 @@ import "./public-path";
 import { createApp } from "vue";
 import App from "./App.vue";
 import { createWebHistory, createRouter } from "vue-router/auto";
-import { setupLayouts as extendRoutes } from "./utils/seupLayouts";
+import { setupLayouts as extendRoutes } from "./router/seupLayouts";
 
 import "@/styles/index.scss";
 import "uno.css";
