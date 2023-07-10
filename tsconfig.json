@@ -34,9 +34,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "src/auto-imports.d.ts",
-    "src/auto-router.d.ts",
-    "src/components.d.ts"
+    "src/*.d.ts"
   ],
   "exclude": [
     "node_modules"

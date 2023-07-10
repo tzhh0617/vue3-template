@@ -9,6 +9,8 @@ const VueRouter = require("unplugin-vue-router/webpack").default;
 
 const pathSrc = path.resolve(__dirname, "src");
 
+const name = 'global'
+
 module.exports = defineConfig({
   transpileDependencies: true,
 
@@ -16,10 +18,23 @@ module.exports = defineConfig({
     devServer: {
       open: true,
       port: 8090,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      }
     },
     resolve: {
       alias: {
         "@/": `${pathSrc}/`,
+      },
+    },
+    css: {
+      loaderOptions: {
+        sass: {
+          additionalData: `@use "@/styles/element/index.scss" as *;`,
+        },
+        scss: {
+          additionalData: `@use "@/styles/element/index.scss" as *;`,
+        },
       },
     },
     plugins: [
@@ -59,15 +74,12 @@ module.exports = defineConfig({
     optimization: {
       realContentHash: true,
     },
-  },
-  css: {
-    loaderOptions: {
-      sass: {
-        additionalData: `@use "@/styles/element/index.scss" as *;`,
-      },
-      scss: {
-        additionalData: `@use "@/styles/element/index.scss" as *;`,
-      },
+    // 把子应用打包成 umd 库格式
+    output: {
+      library: `${name}-[name]`,
+      libraryTarget: 'umd',
+      jsonpFunction: `webpackJsonp_${name}`,
     },
   },
+
 });

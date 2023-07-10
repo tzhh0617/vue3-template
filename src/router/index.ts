@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router/auto";
-import { setupLayouts } from "./seupLayouts";
+import { setupLayouts } from "../utils/seupLayouts";
 
 const router = createRouter({
   history: createWebHistory(),
