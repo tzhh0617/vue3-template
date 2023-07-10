@@ -68,7 +68,7 @@ module.exports = defineConfig({
     output: {
       library: `${name}-[name]`,
       libraryTarget: 'umd',
-      jsonpFunction: `webpackJsonp_${name}`,
+      chunkLoadingGlobal: `webpackJsonp_${name}`,
     },
   },
 
