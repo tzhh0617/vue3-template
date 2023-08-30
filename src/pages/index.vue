@@ -22,4 +22,8 @@
 import { ref } from "vue";
 
 const dialogVisible = ref(false);
+
+definePage({
+  name: 'IndexPage'
+})
 </script>
